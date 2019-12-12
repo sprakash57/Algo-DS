@@ -1,5 +1,5 @@
 /**
- * Write a mn-binary-heap -> lower numbers mean higher priorities
+ * Write a min-binary-heap -> lower numbers mean higher priorities
  * Use priority present in node to build heap
  * enqueue new node and placed it based on priority
  * dequeue method removes node and rearrange queue according to priority
@@ -38,12 +38,18 @@ class PriorityQueue {
         while (true) {
             let current = this.values[idx];
             let leftIdx = 2 * idx + 1;
-            let rightIdx = 2 * idx + 1;
+            let rightIdx = 2 * idx + 2;
             if (leftIdx >= length || rightIdx >= length) break;
             let leftChild = this.values[leftIdx];
             let rightChild = this.values[rightIdx];
             if (rightChild.priority < leftChild.priority && rightChild.priority < current.priority) {
-
+                this.values[idx] = rightChild;
+                this.values[rightIdx] = current;
+                idx = rightIdx;
+            } else if (leftChild.priority < current.priority) {
+                this.values[idx] = leftChild;
+                this.values[leftIdx] = current;
+                idx = leftIdx;
             }
         }
     }
@@ -55,15 +61,18 @@ class PriorityQueue {
             this.values[0] = end;
             this.bubbleDown();
         }
+        return min;
     }
 }
 
 let priorityQueue = new PriorityQueue();
 
-// priorityQueue.enqueue('Student', 6)
+priorityQueue.enqueue('Student', 6)
 priorityQueue.enqueue('SE', 5)
-// priorityQueue.enqueue('SSE', 4)
-// priorityQueue.enqueue('TA', 3)
+priorityQueue.enqueue('SSE', 4)
+priorityQueue.enqueue('TA', 3)
 priorityQueue.enqueue('STA', 2)
 priorityQueue.enqueue('TL', 1)
+console.log(priorityQueue);
+priorityQueue.dequeue();
 console.log(priorityQueue);
