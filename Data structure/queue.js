@@ -1,20 +1,20 @@
-class Node{
-    constructor(val){
+class Node {
+    constructor(val) {
         this.value = val;
         this.next = null;
     }
 }
 
 class Queue {
-    constructor(){
+    constructor() {
         this.start = null;
         this.end = null;
         this.size = 0;
     }
-    //enque
-    insert(val){
+    //enqueue
+    insert(val) {
         let node = new Node(val);
-        if(!this.start){
+        if (!this.start) {
             this.start = node;
             this.end = node;
         } else {
@@ -23,11 +23,11 @@ class Queue {
         }
         return ++this.size;
     }
-    //deque
-    remove(){
-        if(!this.start) return null;
+    //dequeue
+    remove() {
+        if (!this.start) return null;
         let removed = this.start
-        if(this.size === 1) {
+        if (this.size === 1) {
             this.start = null;
             this.end = null;
         } else {
