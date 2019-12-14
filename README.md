@@ -4,5 +4,12 @@ All data structure and algorithm are hand-written. I learned them during the boo
 
 ## Data Structure
 
+ - ES6 Class
  - Singly Linked list
  - Doubly Linked list
+ - Stack
+ - Queue
+ - Binary Search Tree
+ - Binary Heap (Max)
+ - Priority Queue (Min)
+ - Hash Table (Separate Chaining)
