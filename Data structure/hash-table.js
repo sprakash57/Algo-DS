@@ -24,7 +24,7 @@ class HashTable {
     get(key) {
         const index = this._hash(key);
         for (let item of this.keyMap[index]) {
-            if (item[0] === key) return item[1]
+            if (item[0] === key) return item
         }
         return undefined;
     }
@@ -65,5 +65,5 @@ ht.set('sse', 4)
 ht.set('ta', 3)
 ht.set('sta', 3)
 ht.set('tl', 1)
-// console.log(hashTable);
-console.log(ht.keys());
+console.log(ht.get('sta'));
+// console.log(ht.keys());
