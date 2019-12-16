@@ -23,15 +23,35 @@ class Graph {
         }
         delete this.adjacencyList[vt];
     }
+
+    dfsRecursive(vt) {
+        if (!this.adjacencyList[vt]) return 'City not found';
+        const result = [], visited = {};
+        const adjacencyList = this.adjacencyList;
+        (function traverse(vt) {
+            if (!vt) return null;
+            result.push(vt);
+            visited[vt] = true;
+            adjacencyList[vt].forEach(neighbour => {
+                if (!visited[neighbour]) return traverse(neighbour);
+            })
+        })(vt);
+        return result;
+    }
 }
 
 const g = new Graph();
-g.addVertex('Pune')
+g.addVertex('Agra')
+g.addVertex('Banglore')
+g.addVertex('Cochin')
 g.addVertex('Delhi')
-g.addVertex('Kolkata')
-g.addEdge('Kolkata', 'Delhi')
-g.addEdge('Kolkata', 'Pune');
-g.removeVertex('Delhi');
-// console.log('before-----', g);
-//g.removevEdge('Kolkata', 'Pune');
-console.log('after-----', g);
+g.addVertex('Ellora')
+g.addVertex('Faridabad')
+g.addEdge('Agra', 'Banglore')
+g.addEdge('Agra', 'Cochin');
+g.addEdge('Banglore', 'Delhi');
+g.addEdge('Delhi', 'Ellora');
+g.addEdge('Delhi', 'Faridabad');
+g.addEdge('Faridabad', 'Ellora');
+g.addEdge('Ellora', 'Cochin');
+console.log(g.dfsRecursive('Banglore'));
