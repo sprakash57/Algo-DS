@@ -13,3 +13,22 @@ All data structure and algorithm are hand-written. I learned them during the boo
  - Binary Heap (Max)
  - Priority Queue (Min)
  - Hash Table (Separate Chaining)
+ - Graph (Undirected + Adjacency list)
+
+ ## Algorithms
+
+ - Sliding window
+ - Multi pointer
+ - Frequency pointer
+ - Binary Search
+ - Single-loop Sort
+ - Bubble Sort
+ - Insertion Sort
+ - Merge Sort
+ - Quick Sort
+ - Radix Sort
+ - Selection Sort
+ - Dijkstra Algorithm
+
+
+
