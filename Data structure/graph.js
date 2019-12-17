@@ -38,6 +38,41 @@ class Graph {
         })(vt);
         return result;
     }
+
+    dfsIterative(start) {
+        const stack = [start], result = [], visited = {};
+        let current;
+        visited[start] = true;
+        while (stack.length) {
+            console.log(stack);
+            current = stack.pop();
+            result.push(current);
+            this.adjacencyList[current].forEach(edge => {
+                if (!visited[edge]) {
+                    visited[edge] = true;
+                    stack.push(edge);
+                }
+            })
+        }
+        return result;
+    }
+
+    breadthFirstSearch(start) {
+        const queue = [start], result = [], visited = {};
+        let current;
+        visited[start] = true;
+        while (queue.length) {
+            current = queue.shift();
+            result.push(current);
+            this.adjacencyList[current].forEach(edge => {
+                if (!visited[edge]) {
+                    visited[edge] = true;
+                    queue.push(edge)
+                }
+            })
+        }
+        return result;
+    }
 }
 
 const g = new Graph();
@@ -54,4 +89,6 @@ g.addEdge('Delhi', 'Ellora');
 g.addEdge('Delhi', 'Faridabad');
 g.addEdge('Faridabad', 'Ellora');
 g.addEdge('Ellora', 'Cochin');
-console.log(g.dfsRecursive('Banglore'));
+// console.log(g.dfsRecursive('Agra'));
+console.log(g.dfsIterative('Agra'));
+// console.log(g.breadthFirstSearch('Agra'));
