@@ -14,6 +14,7 @@ All data structure and algorithm are hand-written. I learned them during the boo
  - Priority Queue (Min)
  - Hash Table (Separate Chaining)
  - Graph (Undirected + Adjacency list)
+ - Weighted Graph
 
  ## Algorithms
 
