@@ -1,6 +1,6 @@
-# Algorithm and Data Structure (AlgoDS)
+# Programming pillars
 
-All data structure and algorithm are hand-written. I learned them during the boot-camp by Colt Steele. Kept it here for R3(reference, revision and reading). 
+It has all data structure and algorithm questions and concepts learned them during the boot-camp by Colt Steele. Its written JavaScript(ES6). Kept it here for R3(reference, revision and reading). 
 
 ## Data Structure
 
@@ -32,5 +32,11 @@ All data structure and algorithm are hand-written. I learned them during the boo
  - Dijkstra Algorithm
  - Dynamic Programming(Memoization & Tabulation)
 
+## Design patterns
+
+ - Prototype
+ - Factory
+ - Builder
+ - Singleton
 
 
